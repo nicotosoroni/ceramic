@@ -33,10 +33,16 @@
   }
 }
 
-.card {
+.purchase {
   padding: 2em;
 }
 
 .read-the-docs {
   color: #888;
+}
+
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
