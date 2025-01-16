@@ -12,7 +12,6 @@ export default function FetchCSVData() {
   }, []);
 
   const fetchCSVData = () => {
-    console.log('.................', import.meta.env.VITE_CSV_URL);
     axios
       .get(import.meta.env.VITE_CSV_URL || '')
       .then((response) => {
