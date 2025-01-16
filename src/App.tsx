@@ -11,7 +11,6 @@ import { Product } from './models/product.model ';
 function App() {
   const [count, setCount] = useState(0);
   const data: Product[] = FetchCSVData();
-  console.log('data: ', data);
   return (
     <>
       <div>
@@ -25,6 +24,7 @@ function App() {
           <img src={cupLogo} className="logo react" alt="React logo" />
         </a>
       </div>
+      Test {import.meta.env.VITE_TEST}
       <h1>Luli Pottery</h1>
       <div className="grid">
         {data ? (

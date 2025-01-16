@@ -25,7 +25,6 @@ export default function FetchCSVData() {
   };
 
   function parseCSV(csvText: string) {
-    console.log('csvText: ', csvText);
     const rows = csvText.split(/\r?\n/); // Split CSV text into rows, handling '\r' characters
     const headers = rows[0].split(','); // Extract headers (assumes the first row is the header row)
     const data: Product[] = [];
