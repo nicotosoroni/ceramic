@@ -1,14 +1,17 @@
 import { useState } from 'react';
 import cupLogo from './assets/cup.png';
-import pottery1 from './assets/pottery1.png';
-import pottery2 from './assets/pottery2.png';
+// import pottery1 from './assets/pottery1.png';
+// import pottery2 from './assets/pottery2.png';
 // import viteLogo from '/vite.svg';
 import './App.css';
 import Card from './components/card/card';
+import FetchCSVData from './FetchCSVData';
+import { Product } from './models/product.model ';
 
 function App() {
   const [count, setCount] = useState(0);
-
+  const data: Product[] = FetchCSVData();
+  console.log('data: ', data);
   return (
     <>
       <div>
@@ -24,8 +27,13 @@ function App() {
       </div>
       <h1>Luli Pottery</h1>
       <div className="grid">
-        <Card title="Cup" photo={pottery1} />
-        <Card title="Tumbler" photo={pottery2} />
+        {data ? (
+          data.map((e) => (
+            <Card key={e.id} title={e.title} photo={e.imageUrl} />
+          ))
+        ) : (
+          <div></div>
+        )}
       </div>
       <div className="purchase">
         <button onClick={() => setCount((count) => count + 1)}>
