@@ -29,6 +29,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       VITE_TEST: ${{ vars.VITE_TEST }}
+      VITE_CSV_URL: ${{ vars.VITE_CSV_URL }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
