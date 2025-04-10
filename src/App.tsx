@@ -1,12 +1,12 @@
-import { useState } from 'react';
-import cupLogo from './assets/cup.png';
+import { useState } from "react";
+import cupLogo from "./assets/cup.png";
 // import pottery1 from './assets/pottery1.png';
 // import pottery2 from './assets/pottery2.png';
 // import viteLogo from '/vite.svg';
-import './App.css';
-import Card from './components/card/card';
-import FetchCSVData from './FetchCSVData';
-import { Product } from './models/product.model ';
+import Card from "./components/card/card";
+import FetchCSVData from "./FetchCSVData";
+import { Product } from "./models/product.model ";
+import "./App.css";
 
 function App() {
   const [count, setCount] = useState(0);

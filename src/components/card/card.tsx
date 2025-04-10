@@ -1,4 +1,4 @@
-import './card.styles.css';
+import "./card.styles.css";
 
 const Card = (props: { title: string; photo: string }) => {
   const { title, photo } = props;
