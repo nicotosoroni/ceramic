@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import { Product } from "./models/product.model ";
 
-const initialProductValue: Product[] = [{ id: "", title: "", imageUrl: "" }];
+const initialProductValue: Product[] = [{ id: "", title: "", imageUrl: null }];
 
 export default function FetchCSVData() {
   const [csvData, setCsvData] = useState<Product[]>(initialProductValue);
@@ -13,7 +13,7 @@ export default function FetchCSVData() {
 
   const fetchCSVData = () => {
     axios
-      .get(import.meta.env.VITE_CSV_URL || "")
+      .get(process.env.NEXT_PUBLIC_CSV_URL || "")
       .then((response) => {
         const parsedCsvData = parseCSV(response.data);
         setCsvData(parsedCsvData);
